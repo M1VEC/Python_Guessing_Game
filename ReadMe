@@ -1,0 +1,20 @@
+Python Number Guessing Game
+
+Goal: Create a game where the computer randomly picks a number 
+and the user has to try and guess the correct number. 
+
+Things to be included:
+1) The user inputs the max number the cpu can user
+2) The score increase from 0 for every wrong guess
+3) With every wrong guess, the cpu will give a hint
+4) Validate the input is a number
+5) If the same number is inputted more than once, a penalty point will be added.
+6) It will be a console based game
+7) It will loop through and ask the user to play again
+
+Clues: 
+1) The clues will included higher or lower than previous guess
+2) what numbers it can be divided by
+3) what multiples it can be applied to
+
+
