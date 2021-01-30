@@ -1,6 +1,10 @@
 def inputName():
-    return input("What is your name User?")
+    return input("\nWhat is your name User: ")
 
 def inputMaxNumber():
-    return int(input("What is my maximum number limit: "))
+    return int(input("\nWhat is my maximum number limit: "))
+
+def userGuess():
+    return int(input("\nEnter your guess: "))
+
 
