@@ -3,7 +3,8 @@ def firstStart():
     printInstructions()
 
 def welcomeMessage():
-    print("\n                            Random Number Guessing Game")
+    print("*********************************************************************************************")
+    print("                             Random Number Guessing Game")
     print(" ")
     print("                                  ***Welcome User***")
     print(" ")
@@ -16,6 +17,8 @@ def printInstructions():
     print("             The quicker you guess the number the better your score will be")
     print("                    Enter a number in twice and you will be penalised")
     print("                                   Enter 0 to end game")
+    print("*********************************************************************************************")
+    
     return
 
 def helloUserMessage(userName):
@@ -28,6 +31,11 @@ def gameWon(userName, score):
     print("\n                                   your Score was")
     print("\n                                  " + str(score) + " points")
     return
+
+def penalty():
+    print("                          That number has been entered already!")
+    print("                             2 Penalty Points added to score")
+    print("                                       try again!")
     
     
     

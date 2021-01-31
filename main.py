@@ -1,10 +1,11 @@
 from inPlay import inPlay
 import userInterface
-import gameSetup
+from gameSetup import gameSetup
 import userInput
-import scoreboard
+from scoreBoard import scoreBoard
 
 def main():
+    score = scoreBoard()
     userInterface.firstStart()
 
     userName = userInput.inputName()
@@ -14,8 +15,35 @@ def main():
     answer = currentGame.getAnswer()
 
     runGame = inPlay(answer, maxNumber)
-    runGame.startGame()
-  
+    playGame(runGame, score)
+
+    total = score.getScoreBoard()
+    print(total)
+
+
+def playGame(runGame, score):
+    userGuess = userInput.userGuess()
+    if userGuess == 0:
+        return
+    else:
+        if runGame.startGame(userGuess):
+            gameWon(score)
+        else:
+            wrongGuess(runGame, score)
+            return playGame(runGame, score)
+
+
+def wrongGuess(runGame, score):
+    if runGame.getPenalty():
+        score.penalty()
+        userInterface.penalty()
+    else:
+        score.addPoint()
     return
+
+
+def gameWon(score):
+    print("game won")
+
         
 main()
