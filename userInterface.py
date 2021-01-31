@@ -20,3 +20,14 @@ def printInstructions():
 
 def helloUserMessage(userName):
     print("Hello " + userName)
+    return
+
+def gameWon(userName, score):
+    print("\n                                  Congratulations!")
+    print("\n                                you guessed correctly")
+    print("\n                                   your Score was")
+    print("\n                                  " + str(score) + " points")
+    return
+    
+    
+    

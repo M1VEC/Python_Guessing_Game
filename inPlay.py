@@ -1,12 +1,9 @@
-import random
 class inPlay:
 
-    def __init__():
-        return
+    def __init__(self, answer, maxNumber):
+        self.answer = answer
+        self.maxNumber = maxNumber
         
-    def selectRandomNumber(maxNumber):
-        return random.randint(1,maxNumber)
-
     def checkGuess(userNumber, answer):
         return userNumber == answer
     
