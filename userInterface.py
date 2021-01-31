@@ -15,7 +15,7 @@ def printInstructions():
     print("         I will then select a number at random and you will have to try and guess it")
     print("             The quicker you guess the number the better your score will be")
     print("                    Enter a number in twice and you will be penalised")
-    print("                              Enter 0 to quit at any time")
+    print("                                   Enter 0 to end game")
     return
 
 def helloUserMessage(userName):
