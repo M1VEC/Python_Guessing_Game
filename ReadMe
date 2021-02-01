@@ -4,16 +4,19 @@ Goal: Create a game where the computer randomly picks a number
 and the user has to try and guess the correct number. 
 
 Things to be included:
-1) The user inputs the max number the cpu can user
-2) The score increase from 0 for every wrong guess
+1) The user inputs the max number the cpu can use
+2) The score increase 1 point for every wrong guess
 3) With every wrong guess, the cpu will give a hint
-4) Validate the input is a number
-5) If the same number is inputted more than once, a penalty point will be added.
+4) If the same number is inputted more than once, a penalty point will be added.
+5) Validate the input is a number
 6) It will be a console based game
 7) It will loop through and ask the user to play again
 
 Clues: 
-1) The clues will included higher or lower than previous guess
-2) what numbers it can be divided and multipled by
+1) The game will select a clue at random to display to the user
+after every wrong guess
+2) The clues will included higher or lower than previous guess
+3) it will show what numbers it can be divided and multipled by
+4) It will show if the answer can be divided by the guess
 
 
