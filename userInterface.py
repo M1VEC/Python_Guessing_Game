@@ -26,10 +26,10 @@ def helloUserMessage(userName):
     return
 
 def gameWon(userName, score):
-    print("\n                                  Congratulations!")
-    print("\n                                you guessed correctly")
-    print("\n                                   your Score was")
-    print("\n                                  " + str(score) + " points")
+    print("\n                                 Congratulationsv " + userName + "!")
+    print("                                 you guessed correctly")
+    print("                                     your Score was")
+    print("                                       " + str(score) + " points")
     return
 
 def penalty():
