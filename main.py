@@ -17,7 +17,6 @@ def main():
     runGame = inPlay(answer, maxNumber)
     playGame(runGame, score, userName, maxNumber)
 
-
 def playGame(runGame, score, userName, maxNumber):
     userGuess = userInput.userGuess(maxNumber)
     if userGuess == 0:
@@ -29,13 +28,15 @@ def playGame(runGame, score, userName, maxNumber):
             wrongGuess(runGame, score)
             return playGame(runGame, score, userName, maxNumber)
 
-
 def wrongGuess(runGame, score):
     if runGame.getPenalty():
         score.penalty()
         userInterface.penalty()
     else:
         score.addPoint()
+    return
+
+def showClue():
     return
         
 main()
