@@ -6,17 +6,14 @@ class inPlay:
         self.listOfGuess = []
         self.isPenalty = None
         
-    def startGame(self, userGuess):
-            if self.checkGuess(userGuess):
+    def checkGuess(self, userGuess):
+            if userGuess == self.answer:
                 return True
             else:
-                self.verifyNumber(userGuess)
+                self.verifyGuess(userGuess)
                 return False
-                
-    def checkGuess(self, userGuess):
-        return userGuess == self.answer
 
-    def verifyNumber(self, userGuess):
+    def verifyGuess(self, userGuess):
         if userGuess in self.listOfGuess:
             self.isPenalty = True
         else:

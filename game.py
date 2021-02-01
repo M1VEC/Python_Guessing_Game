@@ -17,25 +17,24 @@ class game:
         self.clue = clues(self.answer, self.maxNumber)
     
     def playGame(self):
-        userGuess = userInput.userGuess(self.maxNumber)
-        if userGuess == 0:
+        self.userGuess = userInput.userGuess(self.maxNumber)
+        if self.userGuess == 0:
             return
         else:
-            if self.gameLogic.startGame(userGuess):
+            if self.gameLogic.checkGuess(self.userGuess):
                 userInterface.gameWon(self.userName, self.score.getScoreBoard())
             else:
                 self.wrongGuess()
-                self.showClue(userGuess)
                 return self.playGame()
 
     def wrongGuess(self):
         if self.gameLogic.getPenalty():
             self.score.penalty()
-            userInterface.penalty()
+            return userInterface.penalty()
         else:
             self.score.addPoint()
-        return
+        return self.showClue()
 
-    def showClue(self, userGuess):
-        return userInterface.printClue(self.clue.selectClue(userGuess))
+    def showClue(self):
+        return userInterface.printClue(self.clue.selectClue(self.userGuess))
     

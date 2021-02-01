@@ -14,5 +14,4 @@ def main():
         if not userInput.playAgain(userName):
             break
     
-
 main()

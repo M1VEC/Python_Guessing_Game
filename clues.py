@@ -39,7 +39,7 @@ class clues:
             return "It is an odd number"
 
     def isNumberDividable(self):
-        for number in range(1,self.answer+1):
+        for number in range(2,self.answer+1):
             if self.answer % number == 0:
                 self.numberDividables.append(number)    
         return

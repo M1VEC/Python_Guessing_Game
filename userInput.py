@@ -1,6 +1,5 @@
 from inPlay import inPlay
 
-
 def inputName():
     return input("\nWhat is your name User: ")
 
