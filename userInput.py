@@ -5,9 +5,32 @@ def inputName():
     return input("\nWhat is your name User: ")
 
 def inputMaxNumber():
-    return int(input("\nWhat is my maximum number limit: "))
+    return validateMaxNumberInput("\nWhat is my maximum number limit: ")
+    
+def userGuess(maxNumber):
+    return validateGuess("\nEnter your guess: ", maxNumber)
 
-def userGuess():
-    return int(input("\nEnter your guess: "))
+def validateMaxNumberInput(prompt):
+    while True:
+        try:
+            response = int(input(prompt))
+            break
+        except ValueError:
+            print("Please only enter a valid number! ")
+    return response
+
+def validateGuess(prompt, maxNumber):
+    while True:
+        try:
+            response = int(input(prompt))
+            break
+        except ValueError:
+            print("Please only enter a valid number! ")
+
+    if response < maxNumber:
+        return response
+    else:
+        print("Please enter a number less than " + str(maxNumber)) 
+        validateGuess(prompt, maxNumber)
 
 

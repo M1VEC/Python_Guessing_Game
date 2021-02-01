@@ -15,11 +15,11 @@ def main():
     answer = currentGame.getAnswer()
 
     runGame = inPlay(answer, maxNumber)
-    playGame(runGame, score, userName)
+    playGame(runGame, score, userName, maxNumber)
 
 
-def playGame(runGame, score, userName):
-    userGuess = userInput.userGuess()
+def playGame(runGame, score, userName, maxNumber):
+    userGuess = userInput.userGuess(maxNumber)
     if userGuess == 0:
         return
     else:
@@ -27,7 +27,7 @@ def playGame(runGame, score, userName):
             userInterface.gameWon(userName, score.getScoreBoard())
         else:
             wrongGuess(runGame, score)
-            return playGame(runGame, score, userName)
+            return playGame(runGame, score, userName, maxNumber)
 
 
 def wrongGuess(runGame, score):
@@ -37,10 +37,5 @@ def wrongGuess(runGame, score):
     else:
         score.addPoint()
     return
-
-
-def gameWon(score):
-    print("game won")
-
         
 main()

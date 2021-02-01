@@ -27,15 +27,15 @@ def helloUserMessage(userName):
 
 def gameWon(userName, score):
     print("\n                                 Congratulationsv " + userName + "!")
-    print("                                 you guessed correctly")
-    print("                                     your Score was")
+    print("                                 You guessed correctly")
+    print("                                     Your Score was")
     print("                                       " + str(score) + " points")
     return
 
 def penalty():
     print("                          That number has been entered already!")
     print("                             2 Penalty Points added to score")
-    print("                                       try again!")
+    print("                                       Try again!")
     
     
     
