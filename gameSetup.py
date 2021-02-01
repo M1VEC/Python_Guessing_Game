@@ -1,31 +1,29 @@
 import random
+import userInput
 
 class gameSetup:
     
-    def __init__(self, userName, maxNumber):
+    def __init__(self, userName):
         self.userName = userName
-        self.maxNumber = maxNumber
-        self.setAnswer = self.setAnswer()
-        
-    def setUserName(self, name):
-        self.userName = name
+        self.setMaximum()
+        self.setAnswer()
         
     def setAnswer(self):
         return self.generateRandomNumber()
     
-    def setMaximum(self, maximum):
-        self.maxNumber = maximum    
-        
-    def setScore(self, score):
-        self.currentScore = score    
+    def setMaximum(self):
+        self.maxNumber = userInput.inputMaxNumber()        
     
     def generateRandomNumber(self):
         self.answer = random.randint(1, self.maxNumber)        
     
-    def getUsername(self):
+    def getUserName(self):
         return self.userName
     
     def getAnswer(self):
         return self.answer
+    
+    def getmaxNumber(self):
+        return self.maxNumber
         
         

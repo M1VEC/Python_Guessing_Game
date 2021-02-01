@@ -10,6 +10,13 @@ def inputMaxNumber():
 def userGuess(maxNumber):
     return validateGuess("\nEnter your guess: ", maxNumber)
 
+def playAgain(userName):
+    playAnotherGame =  input(userName + " do you want to play again? ( Y or N): ")
+    if playAnotherGame == 'y' or playAnotherGame == 'Y':
+        return True
+    else:
+        return False
+
 def validateMaxNumberInput(prompt):
     while True:
         try:
