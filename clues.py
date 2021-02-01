@@ -6,25 +6,25 @@ class clues:
         self.maxNumber = maxNumber
         self.numberDividables = []
         self.isNumberDividable()
-        self.clueChoice = ['Even', 'Higher', 'Dividable', 'DivideByGuess']
+        self.clueChoice = ['Even', 'Higher', 'Dividable']
         return
 
     def selectClue(self, userGuess):
-        clue = random.choice(self.clueChoice)
-        if clue == 'Even':
-            self.clueChoice.remove('Even')
-            return self.isNumberEven()
-        elif clue == 'Higher':
-            return self.isNumberHigher(userGuess)
-        elif clue == 'DivideByGuess':
-            return self.isNumberDividableByGuess(userGuess)
+        if self.answer % userGuess == 0:
+            return "The number is dividable by your guess"
         else:
-            if self.getDividable() != "No more multiples remain":
-                return self.getDividable()
+            clue = random.choice(self.clueChoice)
+            if clue == 'Even':
+                self.clueChoice.remove('Even')
+                return self.isNumberEven()
+            elif clue == 'Higher':
+                return self.isNumberHigher(userGuess)
             else:
-                self.clueChoice.remove('Dividable')
-                return self.selectClue(userGuess)
-
+                if self.getDividable() != "No more multiples remain":
+                    return self.getDividable()
+                else:
+                    self.clueChoice.remove('Dividable')
+                    return self.selectClue(userGuess)
         
     def isNumberHigher(self, userGuess):
         if userGuess < self.answer:
@@ -52,11 +52,7 @@ class clues:
         else:
             return "No more multiples remain"
 
-    def isNumberDividableByGuess(self, userGuess):
-        if self.answer % userGuess == 0:
-            return "The number is dividable by your guess"
-        else:
-            return "The number is not dividable by your guess"
+    
     
     
 

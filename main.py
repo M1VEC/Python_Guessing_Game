@@ -3,6 +3,7 @@ import userInput
 from inPlay import inPlay
 from gameSetup import gameSetup
 from scoreBoard import scoreBoard
+from clues import clues
 
 def main():
     score = scoreBoard()
@@ -13,11 +14,12 @@ def main():
 
     currentGame = gameSetup(userName, maxNumber)
     answer = currentGame.getAnswer()
+    clue = clues(answer, maxNumber)
 
     runGame = inPlay(answer, maxNumber)
-    playGame(runGame, score, userName, maxNumber)
+    playGame(runGame, score, userName, maxNumber, clue)
 
-def playGame(runGame, score, userName, maxNumber):
+def playGame(runGame, score, userName, maxNumber, clue):
     userGuess = userInput.userGuess(maxNumber)
     if userGuess == 0:
         return
@@ -26,7 +28,8 @@ def playGame(runGame, score, userName, maxNumber):
             userInterface.gameWon(userName, score.getScoreBoard())
         else:
             wrongGuess(runGame, score)
-            return playGame(runGame, score, userName, maxNumber)
+            showClue(clue, userGuess)
+            return playGame(runGame, score, userName, maxNumber, clue)
 
 def wrongGuess(runGame, score):
     if runGame.getPenalty():
@@ -36,7 +39,7 @@ def wrongGuess(runGame, score):
         score.addPoint()
     return
 
-def showClue():
-    return
+def showClue(clue, userGuess):
+    return userInterface.printClue(clue.selectClue(userGuess))
         
 main()

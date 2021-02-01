@@ -27,7 +27,7 @@ def helloUserMessage(userName):
 
 def gameWon(userName, score):
     print("*********************************************************************************************")
-    print("\n                                 Congratulationsv " + userName + "!")
+    print("\n                                 Congratulations " + userName + "!")
     print("                                 You guessed correctly")
     print("                                     Your Score was")
     print("                                       " + str(score) + " points")
@@ -41,5 +41,6 @@ def penalty():
     print("                                       Try again!")
     print("*********************************************************************************************")
     
-    
+def printClue(clue):
+    print(clue) 
     
