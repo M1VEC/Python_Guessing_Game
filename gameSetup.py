@@ -9,13 +9,10 @@ class gameSetup:
         self.setAnswer()
         
     def setAnswer(self):
-        self.answer = random.randint(1, self.maxNumber)        
+        self.answer = random.randint(2, self.maxNumber)        
     
     def setMaximum(self):
-        self.maxNumber = userInput.inputMaxNumber()        
-    
-    # def generateRandomNumber(self):
-    #     self.answer = random.randint(1, self.maxNumber)        
+        self.maxNumber = userInput.inputMaxNumber()           
     
     def getUserName(self):
         return self.userName
