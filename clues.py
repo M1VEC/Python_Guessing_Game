@@ -50,7 +50,7 @@ class clues:
             self.numberDividables.remove(dividable)
             return "Number is a multiple of " + str(dividable)
         else:
-            return "No more multiples remain"
+            return "No more multiples remain apart from the number itself"
 
     
     

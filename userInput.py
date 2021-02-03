@@ -33,8 +33,11 @@ def validateGuess(prompt, maxNumber):
         except ValueError:
             print("Please only enter a valid number! ")
 
-    if response < (maxNumber +1):
+    if response < (maxNumber +1) and response > -1:
         return response
+    elif response <= -1:
+        print("Please enter a number greater than 0") 
+        return validateGuess(prompt, maxNumber)
     else:
         print("Please enter a number less than " + str(maxNumber)) 
         return validateGuess(prompt, maxNumber)
